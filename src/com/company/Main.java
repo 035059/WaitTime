@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.*;
-import com.company.LinkedQueue;
 
 public class Main {
 
@@ -9,7 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int totalTime = 0;
 
-        LinkedQueue<Patient> waitingRoom = new LinkedQueue<>();
+        LinkedQueue<com.company.Patient> waitingRoom = new LinkedQueue<>();
         LinkedQueue<Patient> tempWaitingRoom = new LinkedQueue<>();
         LinkedQueue<Patient> nurse1 = new LinkedQueue<>();
         LinkedQueue<Patient> nurse2 = new LinkedQueue<>();
@@ -41,6 +40,11 @@ public class Main {
     }
 
     private void userControl(LinkedQueue<Patient> waitingRoom, LinkedQueue<Patient> nurse1, LinkedQueue<Patient> nurse2) {
+        Patient curPat;
+        for (int i = 0; i < waitingRoom.getSize(); i++) {
+            curPat = waitingRoom.pop();
+            System.out.println("Which nurse would you like to send");
+        }
 
     }
 
@@ -68,5 +72,9 @@ public class Main {
         }
 
         return minTime - waitingRoom.getSize();
+    }
+
+    private void printQueue(LinkedQueue queue) {
+        
     }
 }
