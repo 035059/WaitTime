@@ -1,9 +1,10 @@
 package com.company;
 
-public class LinkedQueue<T> {
+public class LinkedQueue<T> implements Cloneable{
     private Node<T> head;
     private Node<T> tail;
     private Node<T> temp;
+    private Node<T> temp2;
     private int size;
 
     public LinkedQueue() {
@@ -44,7 +45,17 @@ public class LinkedQueue<T> {
         return size;
     }
 
-    void print(){
+    public LinkedQueue<T> copy() {
+        LinkedQueue<T> toRet = new LinkedQueue<>();
+        for (int i = 0; i < size; i++) {
+            T tempElement = this.pop();
+            this.add(tempElement);
+            toRet.add(tempElement);
+        }
+        return toRet;
+    }
+
+    public void print(){
         temp = head;
         while(temp  != null){
             System.out.println(temp.element);

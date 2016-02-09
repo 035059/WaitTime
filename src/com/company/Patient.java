@@ -3,7 +3,7 @@ package com.company;
 /**
  * Created by allin on 28/01/16.
  */
-public class Patient{
+public class Patient implements Cloneable{
 
     private String name;
     private int timeNeeded;
@@ -19,5 +19,11 @@ public class Patient{
 
     public int getTimeNeeded() {
         return timeNeeded;
+    }
+
+    @Override
+    public Patient clone() throws CloneNotSupportedException {
+        super.clone();
+        return new Patient(name, timeNeeded);
     }
 }
