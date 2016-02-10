@@ -1,11 +1,12 @@
 package com.company;
 
 public class Node<T>{
-    Node<T> prev;
-    Node<T> next;
-    T element;
-    public Node() {}
-    public Node(T element) {
-        this.element = element;
-    }
+    /*
+     * Minimalist doubly linked Node, aimed at efficiency
+     */
+
+    Node<T> prev; // Reference to previous node
+    Node<T> next; // Reference ot next node
+    T element; // The data stored in the array
+    public Node() {} // Empty constructor as other attributes are public
 }
