@@ -1,0 +1,27 @@
+private static int findFastestTime (LinkedQueue<Patient> waitingRoom, LinkedQueue<Patient> nurse1, LinkedQueue<Patient> nurse2) throws IllegalAccessException, InstantiationException {
+	int minTime;
+        int nurse1Time = 0;
+        int nurse2Time = 0;
+
+        System.out.println("To get the fastest time: ");
+        while (waitingRoom.getSize() > 0){
+            Patient curPat = waitingRoom.pop();
+            if (nurse1Time <= nurse2Time){
+                System.out.println(curPat.getName() + " should go to Nurse 1");
+                nurse1.add(curPat);
+                nurse1Time += curPat.getTimeNeeded();
+            } else {
+                System.out.println(curPat.getName() + " should go to Nurse 2");
+                nurse2.add(curPat);
+                nurse2Time += curPat.getTimeNeeded();
+            }
+
+        }
+        if (nurse1Time <= nurse2Time){
+            minTime = nurse1Time;
+        } else {
+            minTime = nurse2Time;
+        }
+
+        return minTime - waitingRoom.getSize();
+}

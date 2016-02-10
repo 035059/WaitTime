@@ -1,10 +1,10 @@
 package com.company;
 
 public class LinkedQueue<T> {
-    /*
+    /**
      * Basic Linked Queue, plus a clone function
      * Also uses generics, cause they are cool/really useful
-     */
+     * */
 
     // Attribute declaration
     private Node<T> head;
@@ -59,8 +59,8 @@ public class LinkedQueue<T> {
     }
 
     /*
-     * Returns the size of the queue
-     */
+         * Returns the size of the queue
+         */
     public int getSize() {
         return size;
     }
